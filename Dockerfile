@@ -62,7 +62,7 @@ WORKDIR /home/ScadaBR_Installer/
 RUN sudo chmod +x update_scadabr.sh
 RUN sudo ./update_scadabr.sh
 
-#RUN sudo sudo /opt/tomcat6/apache-tomcat-6.0.53/bin/startup.sh
+RUN sudo /opt/tomcat6/apache-tomcat-6.0.53/bin/startup.sh
 
 WORKDIR /home/selenium
 #RUN sudo python3 loaddata.py
@@ -71,6 +71,6 @@ EXPOSE 502
 EXPOSE 8080
 EXPOSE 9090
 
-#CMD ["/bin/bash", "/home/selenium/init.sh"] && ["nginx", "-g", "daemon off;"]
+CMD ["/bin/bash", "/home/selenium/init.sh"] && ["nginx", "-g", "daemon off;"]
 #make the container run infinitely
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
